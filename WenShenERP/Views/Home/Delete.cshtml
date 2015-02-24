@@ -1,0 +1,33 @@
+﻿@model WenShenERP.Models.Province
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Province</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProvinceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProvinceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProvinceCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProvinceCode)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="删除" /> |
+        @Html.ActionLink("返回列表", "Index")
+    </p>
+}
