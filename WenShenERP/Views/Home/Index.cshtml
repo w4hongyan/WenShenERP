@@ -3,13 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+    <tr>
+        <td style="padding-left:13px;">省份数据管理</td>
+        <td width="50"><input type="submit" class="buttonStyle1" value="新建" onclick="javascript: location.href='/Home/Create'" /></td>
+        <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+    </tr>
 
-<h2>Index</h2>
+</table>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_list">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProvinceName)

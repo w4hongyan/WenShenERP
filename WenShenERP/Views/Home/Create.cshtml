@@ -3,35 +3,52 @@
 @{
     ViewBag.Title = "Create";
 }
+
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
         <tr>
-        <td style="padding-left:13px;">添加省份信息数据</td>
+        <td style="padding-left:13px;">添加</td>
         <td width="50"><input type="submit" class="buttonStyle1" value="保存" /></td>
         <td width="50"><input type="button" class="buttonStyle1" value="返回" onClick="javascript: history.go(-1)"/></td></tr>
 
     </table>
-    <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
-        <tr>
-            <td width="65">
-               @Html.LabelFor(model => model.ProvinceName)
-            </td>
-            <td>@Html.EditorFor(model => model.ProvinceName)</td>
-            <td>
-                @Html.ValidationMessageFor(model => model.ProvinceName)
-            </td>
-        </tr>
-        <tr>
-            <td width="65">@Html.LabelFor(model => model.ProvinceCode)</td>
-            <td>@Html.EditorFor(model => model.ProvinceCode)</td>
-            <td>
+<table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
+        <tr><td>
+            @Html.LabelFor(model => model.ProvinceName)
+        </td>
+		<td>
+        <td>
+            @Html.EditorFor(model => model.ProvinceName)
+            @Html.ValidationMessageFor(model => model.ProvinceName)
+        </td>
+		</tr>
+
+        <tr><td>
+            @Html.LabelFor(model => model.ProvinceCode)
+        </td>
+		<td>
+        <td>
+            @Html.EditorFor(model => model.ProvinceCode)
             @Html.ValidationMessageFor(model => model.ProvinceCode)
-            </td>
-        </tr>
-    </table>
+        </td>
+		</tr>
+
+        <tr><td>
+            @Html.LabelFor(model => model.PrimaryCity)
+        </td>
+		<td>
+        <td>
+            @Html.EditorFor(model => model.PrimaryCity)
+            @Html.ValidationMessageFor(model => model.PrimaryCity)
+        </td>
+		</tr>
+
+ </table>
 }
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

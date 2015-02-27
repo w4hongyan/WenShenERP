@@ -84,3 +84,6 @@ D:\code\WenShenERP\WenShenERP\WenShenERP\bin\zh-Hans\System.Web.WebPages.Razor.r
 D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.csprojResolveAssemblyReference.cache
 D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.dll
 D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.pdb
+D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.Migrations.InitialCreate.resources
+D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.csproj.GenerateResource.Cache
+D:\code\WenShenERP\WenShenERP\WenShenERP\obj\Debug\WenShenERP.Migrations.AddCity.resources

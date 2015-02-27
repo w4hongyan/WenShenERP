@@ -87,6 +87,10 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 #maincontent{overflow:scroll; width:100%;}
 html {overflow-y:hidden}
 
+#maincontent {
+font-size:13px;
+}
+
 .text-box
 {
     border:1px solid #739AB9;
