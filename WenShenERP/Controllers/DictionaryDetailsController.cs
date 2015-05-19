@@ -40,11 +40,16 @@ namespace WenShenERP.Controllers
                 
             }
             ViewBag.Options = options;
+            ViewBag.DictDetValue = model.DictDetValue;
             //linq语法
             var models = from m in db.DictionaryDetailses select m;
             if (model.DictTypeID > 0)
             {
                 models = models.Where(m => m.DictTypeID == model.DictTypeID);
+            }
+            if(!string.IsNullOrEmpty(model.DictDetValue))
+            {
+                models = models.Where(m => m.DictDetValue == model.DictDetValue);
             }
             models = models.OrderBy(m => m.DictDetID);
             PagedList<DictionaryDetails> pagedList = new PagedList<DictionaryDetails>(models, pageIndex, CommonData.pagesize);

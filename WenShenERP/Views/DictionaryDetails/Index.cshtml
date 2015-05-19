@@ -55,8 +55,9 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <span>@Html.DisplayNameFor(model => model[0].DictDetValue)：</span><input type="text" name="model.DictDetValue" value="@ViewBag.DictDetValue" />
-    <input type="hidden" id="pindex" name="pageIndex"/>
+    <span>@Html.DisplayNameFor(model => model[0].DictDetValue)：</span>
+    <input type="text" name="model.DictDetValue" value="@ViewBag.DictDetValue" />
+    <input type="hidden" id="pindex" name="pageIndex" />
     <select name="model.DictTypeID">
         @{
     var html = new MvcHtmlString(ViewBag.Options);
