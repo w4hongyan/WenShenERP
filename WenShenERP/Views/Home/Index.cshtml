@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
+
 <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
     <tr>
         <td style="padding-left:13px;">省份数据管理</td>
@@ -11,7 +12,6 @@
     </tr>
 
 </table>
-
 <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_list">
     <tr>
         <th>
@@ -33,7 +33,6 @@
         </td>
         <td>
             @Html.ActionLink("编辑", "Edit", new { id=item.ProvinceID }) |
-            @Html.ActionLink("详细", "Details", new { id=item.ProvinceID }) |
             @Html.ActionLink("删除", "Delete", new { id=item.ProvinceID })
         </td>
     </tr>

@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>后台基本页</title>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Content/css_js/left_menu/left_menu.js")"></script>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css_js/left_menu/left_menu_style.css")" />
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css_js/main.css")" />
@@ -84,7 +84,7 @@
                 </table>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td style="height:30px; background:url(@Url.Content("~/Content/images/top/toplinebg.jpg)") repeat-x;">
+                        <td style="height:30px; background:url(@Url.Content("~/Content/images/top/toplinebg.jpg")) repeat-x;">
 
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -180,11 +180,28 @@
                         <h2 class="l2"><a href="#">二级菜单</a></h2>
                         <h2 class="l2"><a href="#">二级菜单</a></h2>
                     </div>
-                    <h1 class="l1">一级菜单</h1>
+                    <h1 class="l1">系统设置</h1>
                     <div class="slist">
-                        <h2 class="l2"><a href="#">二级菜单</a></h2>
-
-                        <h2 class="l2"><a href="#">二级菜单</a></h2>
+                        <h2 class="l2"><a href="#">省份设置</a></h2>
+                        <ul class="sslist">
+                            <li class="l3"><a href="/Province/Create">新增</a></li>
+                            <li class="l3"><a href="/Province/Index">管理</a></li>
+                        </ul>
+                        <h2 class="l2"><a href="#">城市设置</a></h2>
+                        <ul class="sslist">
+                            <li class="l3"><a href="/City/Create">新增</a></li>
+                            <li class="l3"><a href="/City/Index">管理</a></li>
+                        </ul>
+                        <h2 class="l2"><a href="#">数据字典管理</a></h2>
+                        <ul class="sslist">
+                            <li class="l3"><a href="/DictionaryType/Create">新增</a></li>
+                            <li class="l3"><a href="/DictionaryType/Index">管理</a></li>
+                        </ul>
+                        <h2 class="l2"><a href="#">数据字典明细管理</a></h2>
+                        <ul class="sslist">
+                            <li class="l3"><a href="/DictionaryDetails/Create">新增</a></li>
+                            <li class="l3"><a href="/DictionaryDetails/Index">管理</a></li>
+                        </ul>
                         <h2 class="l2"><a href="#">二级菜单</a></h2>
                     </div>
 

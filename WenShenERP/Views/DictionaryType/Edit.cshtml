@@ -1,0 +1,48 @@
+﻿@model WenShenERP.Models.DictionaryType
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+        <tr>
+            <td style="padding-left:13px;">添加</td>
+            <td width="50"><input type="submit" class="buttonStyle1" value="保存" /></td>
+            <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+        </tr>
+
+    </table>
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.DictTypeKey)
+            </td>
+            <td>
+            <td>
+                @Html.EditorFor(model => model.DictTypeKey)
+                @Html.ValidationMessageFor(model => model.DictTypeKey)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.DictTypeValue)
+            </td>
+            <td>
+            <td>
+                @Html.EditorFor(model => model.DictTypeValue)
+                @Html.ValidationMessageFor(model => model.DictTypeValue)
+                @Html.HiddenFor(model=>model.DictTypeID)
+            </td>
+        </tr>
+
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

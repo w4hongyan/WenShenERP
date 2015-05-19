@@ -1,0 +1,38 @@
+﻿@model WenShenERP.Models.Province
+
+@{
+    ViewBag.Title = "Delete";
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+    <tr>
+        <td style="padding-left:13px;">确认删除该项数据?</td>
+        <td width="50"></td>
+        <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+    </tr>
+
+</table>
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_list">
+ <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvinceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProvinceCode)
+        </th>
+ </tr>
+ <tr>
+        <td>
+            @Html.DisplayFor(model => model.ProvinceName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ProvinceCode)
+        </td>
+ </tr>
+</table>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="删除" class="buttonStyle1" /> |
+        @Html.ActionLink("返回列表", "Index")
+    </p>
+}

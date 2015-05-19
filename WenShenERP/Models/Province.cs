@@ -16,8 +16,5 @@ namespace WenShenERP.Models
         [Display(Name = "省份编码")]
         [Required(ErrorMessage = "省份编码必填！")]
         public string ProvinceCode { get; set; }
-        [Display(Name = "省会城市")]
-        [Required(ErrorMessage = "省会城市必填！")]
-        public string PrimaryCity { get; set; }
     }
 }

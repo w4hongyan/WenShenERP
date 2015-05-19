@@ -1,7 +1,7 @@
 
 .listbg1{ background-color:#F2F5F6;}
 .listbg2{ background-color:#FFDDC4;}
-input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all elements which get the 'box' class */}
+
 #table_nav td{
 	background:url(../../Content/images/top/nav.jpg) no-repeat; 
 	height:29px; 
@@ -19,7 +19,12 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 	color:#fff;
 	font-weight:bold;
 }
-
+#search_table{margin-left:10px;}
+#search_table td
+{
+    font-size:13px;    
+}
+.fromSpan{font-size:13px;}
 .table_form td{
 	background:#F2F5F6;
 	height:35px;
@@ -27,8 +32,18 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 	color:#02538B;
 	line-height:35px;
 	padding-left:12px;
-	
 }
+
+.table_form select
+{
+    height:24px;
+	line-height:24px;
+	background-image:url(../../Content/images/main/inputbg.gif);
+	border:1px solid #719AB9;
+ 	padding-left:5px;
+	width:97%;
+	color:#004879;
+	}
 .inputStyle1{
 	border:1px solid #719AB9;
 	height:20px;
@@ -38,23 +53,59 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 	width:96%;
 	color:#004879;
 }
+.inputStyle3{
+	border:1px solid #719AB9;
+	height:20px;
+	line-height:20px;
+	background-image:url(../../Content/images/main/inputbg.gif);
+ 	padding-left:5px;
+	width:85%;
+	color:#004879;
+}
 .inputStyle2{
 	border:none;
-	border-bottom:1px solid #02538B;
+	border-bottom:1px solid #719AB9;
 	height:20px;	
 	line-height:20px;
-	width:99%;
+	width:96%;
+	background:#F2F5F6;
+	color:#004879;
+}
+#table_form td{font-size:13px;}
+#table_form input
+{
+    border:1px solid #719AB9;
+	
+	background:#F2F5F6;
+	color:#004879;
+   }
+.textBoxStyle1
+{
+    border:1px solid #719AB9;
+	height:20px;
+	line-height:20px;
+	background-image:url(../../Content/images/main/inputbg.gif);
+ 	padding-left:5px;
+	width:96%;
+	color:#004879;
+    }
+.textAreaStyle1{
+
+	border:1px solid #719AB9;
+	height:60px;	
+	line-height:20px;
+	width:96%;
 	background:#F2F5F6;
 	color:#004879;
 }
 #table_list_title td{
-	background-image:url(../../Content/images/main/tableTitleBg.jpg);
+	background:url(../../Content/images/main/tableTitleBg.jpg);
 	height:26px;
 	vertical-align:middle;
 }
 #table_list{border-collapse:collapse;}
 #table_list th{
-	background-image:url(../../Content/images/main/th_bg.gif);
+	background-image:url(../images/main/th_bg.gif);
 	height:25px;
 	border:1px solid #8BA9BE;
 	font-size:13px;
@@ -63,8 +114,9 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 	color:#02538B;
 
 }
+#table_list td{height:25px; border:1px solid #92B1C6;font-size:13px;}
 #table_list th .end{
-	background-image:url(../../Content/images/main/th_bg.gif);
+	background-image:url(../images/main/th_bg.gif);
 	height:25px;
 	border:1px solid #8BA9BE;
 	text-align:center;
@@ -74,37 +126,125 @@ input{behavior: url(ie-css3.htc); /* This lets IE know to call the script on all
 	
 }
 
-.buttonStyle1
-{
-   border:none;
-   width:42px;
-   height:21px;
-   line-height:21px;
-   color:#ffffff;
-   background:url(../../Content/images/main/button/buttonBg1.jpg); 
-   }
-#table_list td{height:25px; border:1px solid #92B1C6;}
-#maincontent{overflow:scroll; width:100%;}
-html {overflow-y:hidden}
+#semiGoodsList{border-collapse:collapse;}
+#semiGoodsList th{
+	background-image:url(../images/main/th_bg.gif);
+	height:25px;
+	border:1px solid #8BA9BE;
+	font-size:13px;
+	font-weight:bold;
+	text-align:center;
+	color:#02538B;
 
-#maincontent {
-font-size:13px;
 }
+#semiGoodsList td{height:25px; border:1px solid #92B1C6;font-size:13px;}
+
+#rawList{border-collapse:collapse;}
+#rawList th{
+	background-image:url(../images/main/th_bg.gif);
+	height:25px;
+	border:1px solid #8BA9BE;
+	font-size:13px;
+	font-weight:bold;
+	text-align:center;
+	color:#02538B;
+
+}
+#rawList td{height:25px; border:1px solid #92B1C6;font-size:13px;}
+
+#packageList{border-collapse:collapse;}
+#packageList th{
+	background-image:url(../images/main/th_bg.gif);
+	height:25px;
+	border:1px solid #8BA9BE;
+	font-size:13px;
+	font-weight:bold;
+	text-align:center;
+	color:#02538B;
+
+}
+#packageList td{height:25px; border:1px solid #92B1C6;font-size:13px;}
+
+
+
+#mytable{border-collapse:collapse;}
+#mytable th{
+	background-image:url(../images/main/th_bg.gif);
+	height:25px;
+	border:1px solid #8BA9BE;
+	font-size:13px;
+	font-weight:bold;
+	text-align:center;
+	color:#02538B;
+
+}
+#mytable td{
+	
+	font-size:13px;
+
+}
+#mytable th .end{
+	background-image:url(../images/main/th_bg.gif);
+	height:25px;
+	border:1px solid #8BA9BE;
+	text-align:center;
+	font-size:13px;
+	font-weight:bold;
+	color:#02538B;
+	
+}
+#mytable td{height:25px; border:1px solid #92B1C6;}
+
+
 
 .text-box
 {
-    border:1px solid #739AB9;
-    width:96%;
-    height:20px;
-    line-height:20px;
-    background:url(../../Content/images/main/inputbg.gif);
-    color:#004879;
+    border:1px solid #719AB9;
+	height:20px;
+	line-height:20px;
+	background-image:url(../../Content/images/main/inputbg.gif);
+ 	padding-left:5px;
+	width:96%;
+	color:#004879;
+    
+ }
+.buttonStyle1
+{
+    border:none;
+    width:42px;
+    height:21px;
+    line-height:21px;
+    color:#ffffff;
+    background:url(../../Content/images/main/button/buttonBg1.jpg);  
 }
+
+.buttonStyle2
+{
+    border:none;
+    width:70px;
+    height:21px;
+    line-height:21px;
+    color:#ffffff;
+    background:url(../../Content/images/main/button/buttonBg3.jpg);  
+}
+
+.pagination{margin-bottom:10px;line-height:23px;} 
+
+.pagination a,.pagination span{display:inline;margin-left:3px;padding:0 7px;border:1px solid #a2d0e5;background-color:#D9E1E6;white-space:nowrap;} 
+.pagination a:link,.pagination a:visited{color:#000; text-decoration:none} 
+.pagination a:hover,.pagination a:active{border-color:#1db535;text-decoration:none;} 
+.pagination .current,.pagination a.current:link,.pagination a.current:visited{color:#000;border-color:#a2d0e5;background:#FFDDC4;font-weight:bold;}
+
+
+#maincontent{overflow:scroll; width:100%;}
+html {overflow-y:hidden}
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
 .field-validation-error {
     color: #ff0000;
+     font-size:13px;
+    padding-left:10px;
 }
 
 .field-validation-valid {
@@ -114,11 +254,15 @@ font-size:13px;
 .input-validation-error {
     border: 1px solid #ff0000;
     background-color: #ffeeee;
+    font-size:12px;
+    padding-left:10px;
 }
 
 .validation-summary-errors {
     font-weight: bold;
     color: #ff0000;
+    font-size:12px;
+    
 }
 
 .validation-summary-valid {
@@ -137,14 +281,19 @@ font-size:13px;
     margin: 0.5em 0 0 0;
 }
 
-.text-box {
-    width: 30em;
-}
+
 
 .text-box.multi-line {
     height: 6.5em;
 }
 
+
 .tri-state {
     width: 6em;
 }
+/* jQuery timepicker addon*/
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+ .ui-timepicker-div dl{ text-align: left; }
+ .ui-timepicker-div dl dt{ height: 25px; }
+ .ui-timepicker-div dl dd{ margin: -25px 10px 10px 65px; }
+ .ui-timepicker-div td { font-size: 90%; }

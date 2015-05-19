@@ -1,0 +1,206 @@
+﻿@model WenShenERP.Utils.PagedList<WenShenERP.Models.Province>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    .pagination {
+        margin-bottom: 10px;
+        line-height: 23px;
+    }
+
+        .pagination a, .pagination span {
+            display: inline;
+            margin-left: 3px;
+            padding: 0 7px;
+            border: 1px solid #a2d0e5;
+            background-color: #D9E1E6;
+            white-space: nowrap;
+        }
+
+            .pagination a:link, .pagination a:visited {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .pagination a:hover, .pagination a:active {
+                border-color: #1db535;
+                text-decoration: none;
+            }
+
+            .pagination .current, .pagination a.current:link, .pagination a.current:visited {
+                color: #000;
+                border-color: #a2d0e5;
+                background: #FFDDC4;
+                font-weight: bold;
+            }
+</style>
+<script type="text/javascript">
+    function selectAll(o) {
+        var itemIds = document.getElementsByName("itemId");
+        for (var i = 0; i < itemIds.length; i++) {
+            itemIds[i].checked = o.checked;
+        }
+    }
+    function getSelectedCount(checkboxitems){
+        var count=0;
+        for(var i=0;i<checkboxitems.length;i++)
+        {
+            if(checkboxitems[i].checked)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    function deleteAll() {
+        var itemIds = document.getElementsByName("itemId");
+        if(getSelectedCount(itemIds)<1)
+        {
+            alert("请选择要批量删除的数据");
+        } else {
+            var bln = window.confirm("确认删除这些数据吗？");
+            if(bln==true)
+            {
+                var idstr = "";
+                for (var i = 0; i < itemIds.length; i++) {
+                    if (itemIds[i].checked) {
+                        idstr += itemIds[i].value + ",";
+                    }
+                }
+                document.getElementById("deleteIds").value = idstr;
+                document.getElementById("deleteForm").submit();
+            }
+        }
+    }
+</script>
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+    <tr>
+        <td style="padding-left:13px;">管理</td>
+        <td width="50"><input type="submit" class="buttonStyle2" value="批量删除" onclick="deleteAll()" /></td>
+        <td width="50"><input type="submit" class="buttonStyle1" value="新建" onclick="javascript: location.href='//Create'" /></td>
+        <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+    </tr>
+
+</table>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <span>省名：</span><input type="text" name="model.CityName" value="@ViewBag.CityName" />
+    <input type="hidden" id="pindex" name="pageIndex" />
+    <input type="button" value="搜索" onclick="toPage(0)" class="buttonStyle1" />
+}
+<table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_list">
+    <tr>
+        <th width="70">
+            <input type="checkbox" id="c_selectAll" onclick="selectAll(this)" />全选
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].ProvinceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model[0].ProvinceCode)
+        </th>
+        <th>操作</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <input type="checkbox" name="itemId" value="@Html.DisplayFor(modelItem=>item.ProvinceID)" />
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProvinceName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProvinceCode)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.ProvinceID }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.ProvinceID })
+            </td>
+        </tr>
+    }
+    <form method="post" action="//DeleteAll" id="deleteForm">
+        <input type="hidden" name="idstr" id="deleteIds" value="" />
+    </form>
+</table>
+<table border="0">
+    <tr>
+        <td align="right">
+            <div class="clearfix pagination">
+                @if (Model.Start > 1)
+                {
+                    //如果当前页面超过第二页则显示第一页"1...."的效果
+                    <a href="#" onclick="toPage(0)" title="第一页">1...</a>
+                }
+                @for (int i = Model.Start; i <= Model.End; i++)
+                {
+                    //遍历页号
+                    //找到当前页号，改变css样式
+                    if (i == Model.PageIndex + 1)
+                    {
+                        <a href="#" onclick="toPage(@i-1)" title="当前第 @i 页" class="current">@i.ToString()</a>
+                    }
+                    else
+                    {
+                        <a href="#" onclick="toPage(@i-1)" title="前往第 @i 页">@i.ToString()</a>
+                    }
+
+                }
+                @if (Model.End < Model.TotalPages && Model.PageIndex - Model.Start < 2)
+                {//End小于总页数并且当前页码-1-Start 小于2
+                    <a href="#" onclick="toPage(@Model.TotalPages-1)" title="最后一页">...@Model.TotalPages.ToString()</a>
+                }
+                <span style="font-size:13px;">跳转：</span>
+                <select onchange="toPage(options[this.selectedIndex].value)">
+                    @for (int i = 1; i <= @Model.TotalPages; i++)
+                    {
+                        var pindex = i - 1;
+                        if (i == Model.PageIndex + 1)
+                        {
+
+                            <option value="@pindex" selected="selected">第 @i 页</option>;
+                        }
+                        else
+                        {
+                            <option value="@pindex">第 @i 页</option>;
+                        }
+
+                    }
+
+
+                </select>
+            </div>
+        </td>
+    </tr>
+
+</table>
+<script type="text/javascript">
+    function toPage(pIndex) {
+        var p = document.getElementById("pindex");
+        p.value = pIndex;
+        document.forms[0].submit();
+    }
+    function toAllPage(){
+        refresh();
+        toPage(0);
+    }
+    //清空表单，回到默认
+    function refresh(){
+        var v=document.forms[0].elements;//所有表单元素
+        for(var i=0;i<v.length;i++){
+            if(v[i].type=="text"){
+                v[i].value="";
+            }
+            if(v[i].type.indexOf("select")>-1){
+                v[i].selectedIndex=0;
+            }
+        }
+    }
+</script>

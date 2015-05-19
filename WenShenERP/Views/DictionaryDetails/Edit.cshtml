@@ -1,0 +1,50 @@
+﻿@model WenShenERP.Models.DictionaryDetails
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+        <tr>
+            <td style="padding-left:13px;">编辑字典明细</td>
+            <td width="50"><input type="submit" class="buttonStyle1" value="保存" /></td>
+            <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+        </tr>
+
+    </table>
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.DictTypeID)
+            </td>
+            <td>
+            <td>
+                @Html.DropDownListFor(model => model.DictTypeID, ViewData["list"] as SelectList, "请选择")
+                @Html.ValidationMessageFor(model => model.DictTypeID)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.DictDetValue)
+            </td>
+            <td>
+            <td>
+                @Html.EditorFor(model => model.DictDetValue)
+                @Html.ValidationMessageFor(model => model.DictDetValue)
+                @Html.HiddenFor(model=>model.DictDetID)
+            </td>
+        </tr>
+
+
+
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

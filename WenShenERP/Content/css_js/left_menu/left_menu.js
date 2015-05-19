@@ -5,30 +5,29 @@ var l2Indx = 0;
 $(document).ready(function () {
     //一级展开
     $(".l1").toggle(function () {
-
-        $(".slist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
+        //$(".slist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
         $(this).next(".slist").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
         indx = $(this).index();
     }, function () {
-
-        $(".slist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
+        //$(".slist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
         //判断是否是本节点，只有不是本节点才打开
-        if (indx != $(this).index()) {
+        //if (indx != $(this).index()) {
+           
             $(this).next(".slist").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
             indx = $(this).index()
-        }
+        //}
     });
     //二级
     $(".l2").toggle(function () {
-        $(".sslist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
+        //$(".sslist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
         $(this).next(".sslist").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
         l2Indx = $(this).index();
     }, function () {
-        $(".sslist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
-        if (l2Indx != $(this).index()) {
+        //$(".sslist").animate({ height: 'toggle', opacity: 'hide' }, "slow");
+        //if (l2Indx != $(this).index()) {
             $(this).next(".sslist").animate({ height: 'toggle', opacity: 'toggle' }, "slow");
 
-        }
+        //}
     });
 
 

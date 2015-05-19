@@ -1,4 +1,4 @@
-﻿@model WenShenERP.Models.Province
+﻿@model WenShenERP.Models.DictionaryType
 
 @{
     ViewBag.Title = "Create";
@@ -16,22 +16,22 @@
     </table>
 <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
         <tr><td>
-            @Html.LabelFor(model => model.ProvinceName)
+            @Html.LabelFor(model => model.DictTypeKey)
         </td>
 		<td>
         <td>
-            @Html.EditorFor(model => model.ProvinceName)
-            @Html.ValidationMessageFor(model => model.ProvinceName)
+            @Html.EditorFor(model => model.DictTypeKey)
+            @Html.ValidationMessageFor(model => model.DictTypeKey)
         </td>
 		</tr>
 
         <tr><td>
-            @Html.LabelFor(model => model.ProvinceCode)
+            @Html.LabelFor(model => model.DictTypeValue)
         </td>
 		<td>
         <td>
-            @Html.EditorFor(model => model.ProvinceCode)
-            @Html.ValidationMessageFor(model => model.ProvinceCode)
+            @Html.EditorFor(model => model.DictTypeValue)
+            @Html.ValidationMessageFor(model => model.DictTypeValue)
         </td>
 		</tr>
 

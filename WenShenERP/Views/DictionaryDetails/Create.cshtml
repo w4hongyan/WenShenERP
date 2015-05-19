@@ -1,4 +1,4 @@
-﻿@model WenShenERP.Models.Province
+﻿@model WenShenERP.Models.DictionaryDetails
 
 @{
     ViewBag.Title = "Create";
@@ -9,31 +9,34 @@
     @Html.ValidationSummary(true)
 <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
         <tr>
-        <td style="padding-left:13px;">添加</td>
+        <td style="padding-left:13px;">添加字典明细</td>
         <td width="50"><input type="submit" class="buttonStyle1" value="保存" /></td>
         <td width="50"><input type="button" class="buttonStyle1" value="返回" onClick="javascript: history.go(-1)"/></td></tr>
 
     </table>
 <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
-        <tr><td>
-            @Html.LabelFor(model => model.ProvinceName)
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.DictTypeID)
+        </td>
+        <td>
+        <td>
+            @Html.DropDownListFor(model => model.DictTypeID,ViewData["list"] as SelectList, "请选择")
+            @Html.ValidationMessageFor(model => model.DictTypeID)
+        </td>
+    </tr>
+    
+    <tr><td>
+            @Html.LabelFor(model => model.DictDetValue)
         </td>
 		<td>
         <td>
-            @Html.EditorFor(model => model.ProvinceName)
-            @Html.ValidationMessageFor(model => model.ProvinceName)
+            @Html.EditorFor(model => model.DictDetValue)
+            @Html.ValidationMessageFor(model => model.DictDetValue)
         </td>
 		</tr>
 
-        <tr><td>
-            @Html.LabelFor(model => model.ProvinceCode)
-        </td>
-		<td>
-        <td>
-            @Html.EditorFor(model => model.ProvinceCode)
-            @Html.ValidationMessageFor(model => model.ProvinceCode)
-        </td>
-		</tr>
+     
 
  </table>
 }

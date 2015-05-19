@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WenShenERP.Models;
 
 namespace WenShenERP
 {
@@ -16,6 +17,8 @@ namespace WenShenERP
     {
         protected void Application_Start()
         {
+            //加载初始化器
+            System.Data.Entity.Database.SetInitializer(new InitData());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

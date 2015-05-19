@@ -1,0 +1,48 @@
+﻿@model WenShenERP.Models.Province
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" id="table_main_title">
+        <tr>
+            <td style="padding-left:13px;">编辑</td>
+            <td width="50"><input type="submit" class="buttonStyle1" value="保存" /></td>
+            <td width="50"><input type="button" class="buttonStyle1" value="返回" onclick="javascript: history.go(-1)" /></td>
+        </tr>
+
+    </table>
+    <table width="98%" border="0" cellspacing="0" cellpadding="0" class="table_form" style="margin-top:15px;">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.ProvinceName)
+            </td>
+            <td>
+            <td>
+                @Html.EditorFor(model => model.ProvinceName)
+                @Html.ValidationMessageFor(model => model.ProvinceName)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.ProvinceCode)
+            </td>
+            <td>
+            <td>
+                @Html.EditorFor(model => model.ProvinceCode)
+                @Html.ValidationMessageFor(model => model.ProvinceCode)
+                @Html.HiddenFor(model=>model.ProvinceID)
+            </td>
+        </tr>
+
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
